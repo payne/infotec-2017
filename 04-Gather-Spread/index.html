@@ -11,8 +11,9 @@
     <p>check that console...</p>
     <script>
         //rest operator
-        function manyArgs(){
-
+        function manyArgs(first,...other){
+            console.log(1,first)
+            console.log(2,other)
         }
         manyArgs("a", "b", "c", "d", "e")
 
