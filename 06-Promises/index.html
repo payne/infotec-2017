@@ -29,25 +29,14 @@
             event.preventDefault();
             var searchTerm = searchField.value;
             search(searchTerm)
-            
+                .then(display)
         })
 
         function search(term){
-            // no jQuery, doing it native old fashioned way.
-                var request = new XMLHttpRequest();
-                request.open('GET', `http://www.omdbapi.com/?t=${term}`, true);
-
-                request.onload = function() {
-                    var result = JSON.parse(request.responseText)
-                    console.log(result);
-                    display(result)
-                };
-
-                request.onerror = function() {
-                    console.log("error")
-                };
-
-                request.send();
+            // fetch is a promise
+            return fetch(`http://www.omdbapi.com/?t=${term}`)
+                .then(result => result.json())
+                .catch(error => console.log(`error=${error}`))
         }
 
         var display = movie => {
@@ -60,14 +49,6 @@
             <img src="${Poster}" alt="${Title} poster"/>
             `
         }
-        // The problem with the old way above is that it is not a clean 
-        // way to work with remote data or other async situations.
-        // The search function should not know what it has to do after 
-        // it is done searching.   Think single responsiblity principle (SRP).
-        // Promises have something happen.  Alert when done.  Just chain on.
-        // Common analogy -- take a ticket at the deli.  
-        
-
     </script>
     
 </body>
