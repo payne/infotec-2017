@@ -7,7 +7,7 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     var searchTerm = searchField.value;
     go(searchTerm)
-        
+    console.log("DONE SEARCHING")    
     
 })
 

@@ -1,6 +1,6 @@
 var gulp = require("gulp");
 var sourcemaps = require("gulp-sourcemaps");
-var babel = require("gulp-babel");
+// var babel = require("gulp-babel");
 var concat = require("gulp-concat");
 var minify = require("gulp-babel-minify");
 
@@ -13,3 +13,8 @@ gulp.task("default", function () {
     .pipe(sourcemaps.write("."))
     .pipe(gulp.dest("build"));
 });
+
+// https://github.com/babel/gulp-babel might be relvant.
+
+// https://github.com/boopathi/babel-minify points to another project.
+
