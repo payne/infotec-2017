@@ -41,18 +41,22 @@
         }
 
         var display = movie => {
-            // display in the output variable
-            var {Title,Year,Rated,Runtime,Poster} = movie // destructure
-            console.log(Title,Year,Rated,Runtime,Poster)
-            output.innerHTML = `
-            <h3>${Title}</h3>
-            <p>Made in ${Year}, rated ${Rated} and has runtime ${Runtime}.</p>
-            <img src="${Poster}" alt="${Title} poster"/>
-            `
-            setTimeout(() => {
-                console.log(`now display is done`)
-            }, 3000) // 3 seconds
-            return movie;
+            return new Promise((resolve, reject) => {
+                // call function resolve when done
+                // call function reject when failure happens
+                // display in the output variable
+                var {Title,Year,Rated,Runtime,Poster} = movie // destructure
+                console.log(Title,Year,Rated,Runtime,Poster)
+                output.innerHTML = `
+                <h3>${Title}</h3>
+                <p>Made in ${Year}, rated ${Rated} and has runtime ${Runtime}.</p>
+                <img src="${Poster}" alt="${Title} poster"/>
+                `
+                setTimeout(() => {
+                    console.log(`now display is done`)
+                    resolve(movie)
+                }, 3000) // 3 seconds
+            })
         }
     </script>
     
