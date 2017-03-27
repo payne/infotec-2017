@@ -29,7 +29,7 @@
             event.preventDefault();
             var searchTerm = searchField.value;
             search(searchTerm)
-                .then(display)
+                .then(data => display(data))
         })
 
         function search(term){
