@@ -55,9 +55,10 @@
             console.log("submit was clicked")
             let name = linkName.value 
             let url = linkURL.value 
-            list.innerHTML+=`<li>
+            list.innerHTML+=
+            `<li>
                    <a href="http://${url}" target="_blank">${name}</a>
-                </li>`
+            </li>`
 
             // could: form.submit() // Send to the server
         })
