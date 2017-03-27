@@ -30,14 +30,15 @@
         /***************************/
         //Destruturing: Stuff happing on the left site of the =
         var list = [1, 2, 3, 4, 5]
-        var [first] = list
-        console.log(4,first)
-
+        var [first,second] = list
+        console.log("First and second")
+        console.log(first,second)
 
         //Destructuring with objects
         var data = {name:"Dustin", state:"Minnesota", conference:"Infotec", years:"6"}
-        var name = data.name
-        var state = data.state
+        // var name = data.name
+        // var state = data.state
+        var {name, state} = data
         console.log(state)
 
 
