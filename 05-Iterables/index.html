@@ -12,6 +12,12 @@
     <script>
         // Symbols and iterators are weird.  Crazy async usecases.
         var list = ["one", "two", "three", "four"]
+        // Step through the array without using a loop.
+        // Symbols are unknown unique values
+        var iterator = list[Symbol.iterator]()
+        console.log(iterator.next())
+        // console.log(iterator.next)
+        // console.log(iterator.next)
 
     </script>
     
