@@ -50,10 +50,9 @@
         const linkURL = document.querySelector('#linkURL')
         console.log(1,linkName, linkURL)
 
-        function doSomethingWithForm() {
-            
-        }
-        form.addEventListener('submit',doSomethingWithForm)
+        form.addEventListener('submit',function() {
+            console.log("submit was clicked")
+        })
     </script>
 
 </body>
