@@ -36,7 +36,7 @@
             // fetch is a promise
             return fetch(`http://www.omdbapi.com/?t=${term}`)
                 .then(result => result.json())
-                .catch(error => console.log(`error=${error}`))
+                .catch(error => console.log(`error=${error}`)) // really shold return something on error.
         }
 
         var display = movie => {
