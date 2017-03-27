@@ -31,7 +31,7 @@
             search(searchTerm)
                 .then(data => display(data))
                 .then(result => console.log(result))
-                .then(result => console.table(result))
+                .then(result => console.dir(result))
         })
 
         function search(term){
