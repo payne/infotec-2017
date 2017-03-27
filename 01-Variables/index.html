@@ -24,6 +24,10 @@
            let name = "Sam" // this is blocked scoped!
        }
        console.log(2,name) // because of let Outputs 2, Matt
+
+       const status = "Nice guy"
+       status = "Nervous" // causes "Uncaught TypeError: Assignment to constant variable."
+       console.log(3,status) // No output because execution stops with exception
     </script>
 </body>
 </html>
