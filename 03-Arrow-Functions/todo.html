@@ -75,7 +75,9 @@
                 <input type="submit" value="Add" />
             </div>
         </form>
-        <ul id="todolist"></ul>
+        <ul id="todolist">
+            
+        </ul>
     </section>
     <footer>
     </footer>
@@ -85,10 +87,12 @@
     const todoList = document.querySelector("#todolist")
     const form = document.querySelector('form')
     const todo = document.querySelector('#newitem')
+    //const todo = document.querySelector('input[type=text]') // bad idea, neat technique
 
     form.addEventListener('submit',(event) => {
         event.preventDefault()
         console.log('submit')
+        todoList.innerHTML += `<li>${todo.value}</li>`
     })
         
 
