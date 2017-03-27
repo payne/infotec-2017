@@ -7,7 +7,7 @@ var minify = require("gulp-babel-minify");
 gulp.task("default", function () {
   return gulp.src("src/**/*.js")
     .pipe(sourcemaps.init())
-    .pipe(babel())
+    .pipe(minify())
    // .pipe(minify())
     .pipe(concat("bundle.js"))
     .pipe(sourcemaps.write("."))
