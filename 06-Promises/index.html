@@ -31,10 +31,13 @@
             search(searchTerm)
                 .then(data => display(data))
                 .then(result => console.log(result))
+                .then(result => console.table(result))
         })
 
         function search(term){
-            // fetch is a promise
+            // fetch is a promise that's native to json
+            // axios is a good library
+            // https://github.com/mzabriskie/axios
             return fetch(`http://www.omdbapi.com/?t=${term}`)
                 .then(result => result.json())
                 .catch(error => console.log(`error=${error}`)) // really shold return something on error.
