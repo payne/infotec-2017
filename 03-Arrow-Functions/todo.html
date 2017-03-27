@@ -95,9 +95,16 @@
         createTodo(todo.value)
         todo.value=''
         todo.focus()
+        console.log(this); // the global window object b/c of where the code is located.
+        // if this was not done with => but function
+        // this would refer to the form rather than the global window function.
     })
         
     var createTodo = todoText => todoList.innerHTML += `<li>${todoText}</li>`;
+
+    // the main thing about => is how it encapsulates scope.  
+    // specifically with the keyword this.
+    
 
     </script>
 </body>
