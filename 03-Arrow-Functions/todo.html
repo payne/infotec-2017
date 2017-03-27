@@ -79,38 +79,11 @@
     </section>
     <footer>
     </footer>
+
+    
     <script>
 
-        var todo = document.querySelector('#todolist')
-        var form = document.querySelector('form')
-        var field = document.querySelector('#newitem')
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            var text = field.value;
-            if (text !== '') {
-                createTodo(text)
-                field.value = '';
-                field.focus();
-            }
-        });
-
-        todo.addEventListener('click', function (event) {
-            event.preventDefault();
-            var t = event.target;
-            if (t.tagName === 'LI') {
-                removeTodo(t);
-            };
-        });
-
-        function createTodo(text){
-            todo.innerHTML += '<li>' + text + '</li>';
-        }
-
-        function removeTodo(li){
-            todo.removeChild(li)
-        }
-
+        
 
     </script>
 </body>

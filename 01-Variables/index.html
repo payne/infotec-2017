@@ -10,45 +10,6 @@
     <h2>let, const, & var</h2>
     <p>Open the console to see the output.</p>
     
-    <script>
-        'use strict'
-        
-        var name = "Dustin"
-
-        function changeName(){
-            var name = "Mike"
-        }
-        changeName()
-        console.log(1, name) //what is name?
-
-        if(true){
-            var name = "Sam" //var is still "global"
-        }
-        console.log(2, name) //what is name?
-
-        if(true){
-            let name = "Brittney" //let is "block scoped"            
-        }
-
-        {
-            var state = "Minnesota"
-        }
-
-        console.log(3, name)
-        console.log(4, state)
-
-        const status = "Very Cool"
-        //status = "so boring" // Can't change a const
-
-        const fruit = ["Orange", "Apple", "Grape"]
-        fruit[1] = "plum"
-        console.log(fruit)
-
-        Object.freeze(fruit); //only throws error in strict mode
-        fruit[1] = "Banana"
-
-
-    </script>
 
 </body>
 </html>

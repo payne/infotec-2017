@@ -27,53 +27,23 @@
             event.preventDefault();
             var searchTerm = searchField.value;
             search(searchTerm)
-                .then((data) => display(data))
-                .then(() => clearSearch())
             
         })
 
-        /*function search(term){
-            return new Promise( (resolve, reject) => {
+        function search(term){
                 var request = new XMLHttpRequest();
                 request.open('GET', `http://www.omdbapi.com/?t=${term}`, true);
 
                 request.onload = function() {
                     var result = JSON.parse(request.responseText)
-                    resolve(result)
+                    console.log(result);
                 };
 
                 request.onerror = function() {
-                    reject()
+                    console.log("error")
                 };
 
                 request.send();
-            })
-        }*/
-
-        function search(term){
-            return fetch(`http://www.omdbapi.com/?t=${term}`)
-                .then(result => result.json())
-                .catch(err => console.log(err))
-
-        }
-
-        function display(movie){
-            console.log(movie)
-            return new Promise((resolve, reject) => {
-                var {Title, Year, Rated, Runtime, Poster} = movie
-                output.innerHTML = 
-                    `<h3>${Title}</h3>
-                    <p>Made in ${Year}, rated ${Rated} and is ${Runtime} long.</p>
-                    <img src="${Poster}" />`
-                setTimeout(() =>{
-                    resolve()
-                }, 4000)
-                
-            })
-        }
-
-        function clearSearch(){
-            searchField.value = ""
         }
 
     </script>

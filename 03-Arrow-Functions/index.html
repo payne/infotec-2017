@@ -11,58 +11,6 @@
 
     <script>
 
-        function basic(){
-
-        }
-
-        var basic = function(){
-
-        }
-
-        //Now with an Arrow Functions
-        var basic = () => {
-
-        }
-        //annonymous function
-        () => {
-
-        }
-        /**************************************************/
-        /* Event Handler */
-        var button = document.querySelector('button')
-        button.addEventListener("click", function(event){
-            //click handler
-            console.log(this)
-        })
-
-        button.addEventListener("click", event => {
-            console.log(this)
-            
-        })
-
-        /****************************************************/
-        /* Functions that return values */
-        var addValues = function(x, y){
-            return x + y
-        }
-
-        var addValues = (x, y) => {
-            return x + y
-        }
-        
-        //or
-        var addValues = (x, y) => x + y
-
-
-
-        //Why the new syntax?
-        //sidenote: default params
-
-
-
-
-
-
     </script>
 
 </body>
