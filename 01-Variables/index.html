@@ -37,6 +37,16 @@
        console.log(5, fruit[0]) // outputs: Juicy Apple 
        fruit.push("orange")
        console.log(6,fruit)
+       Object.freeze(fruit) // will make changes no ops but not throw errors.
+       //fruit.push("mango") // Uncaught TypeError: Can't add property 4, object is not extensible
+       //console.log(6,fruit) // no mango
+
+       fruit[0] = "Spicy Apple"
+       console.log(6,fruit) // did not change to Spicy Apple.  And no exception thorwn.
+       // TODO: Google: javascript deepfreeze
+       // This will show a better (more robust) implementation of freeze.  
+       // works with objects as well as arrays.
+
 
 
     </script>
