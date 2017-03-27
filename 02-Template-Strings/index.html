@@ -44,7 +44,11 @@
         // you could do what ever you want.
         // Use developer.mozilla.org NOT w3Schools!
         const form = document.querySelector('form') // use valid CSS selector 
-        const list = document.querySelector('.links')
+        const list = document.querySelector('.links') // Returns first one
+        // querySelectorAll returns an array of all the nodes found.
+        const linkName = document.querySelector('#linkName')
+        const linkURL = document.querySelector('#linkURL')
+        console.log(1,linkName, linkURL)
     </script>
 
 </body>
