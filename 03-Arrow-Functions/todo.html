@@ -93,6 +93,8 @@
         event.preventDefault()
         console.log('submit')
         createTodo(todo.value)
+        todo.value=''
+        todo.focus()
     })
         
     var createTodo = todoText => todoList.innerHTML += `<li>${todoText}</li>`;
