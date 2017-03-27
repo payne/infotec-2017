@@ -26,8 +26,19 @@
        console.log(2,name) // because of let Outputs 2, Matt
 
        const status = "Nice guy"
-       status = "Nervous" // causes "Uncaught TypeError: Assignment to constant variable."
-       console.log(3,status) // No output because execution stops with exception
+       //status = "Nervous" // causes "Uncaught TypeError: Assignment to constant variable."
+       //console.log(3,status) // No output because execution stops with exception
+
+       const fruit = ["apple", "grape", "kiwi"]
+       console.log(4,fruit) // outputs: ["apple", "grape", "kiwi"]
+       console.log(5, fruit[0]) // outputs: apple 
+       // even though we can't reset the whole array to something else
+       fruit[0] = "Juicy Apple"
+       console.log(5, fruit[0]) // outputs: Juicy Apple 
+       fruit.push("orange")
+       console.log(6,fruit)
+
+
     </script>
 </body>
 </html>
