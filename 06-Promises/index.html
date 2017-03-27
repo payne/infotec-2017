@@ -49,6 +49,9 @@
             <p>Made in ${Year}, rated ${Rated} and has runtime ${Runtime}.</p>
             <img src="${Poster}" alt="${Title} poster"/>
             `
+            setTimeout(() => {
+                console.log(`now display is done`)
+            }, 3000) // 3 seconds
             return movie;
         }
     </script>
