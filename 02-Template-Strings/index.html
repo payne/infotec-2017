@@ -18,6 +18,7 @@
 <body>
     <h2>Template Strings (or Literals)</h2>
     <form action="">
+        <!-- ALWAYS USE LABELs with form elements -->
         <fieldset>
             <label for="linkName">Link Name:</label>
             <input type="text" name="linkName" id="linkName">
@@ -29,10 +30,19 @@
         <input type="submit">
     </form>
     
-    <ul class="links"></ul>
+    <!-- We are going to populat this with list items -->
+    <!-- VSCode has built in support for EMMET.io -->
+    <!-- li>a then escape then tab to make emmit go.  -->
+    <!-- escape removes the suggestions.  Tab makes emmet.io expand it. -->
+    <ul class="links">
+        <li><a href=""></a></li>
+    </ul>
 
     <script>
         // Interoplation rocks!
+        // The { } in template literals are javascript blocks.
+        // you could do what ever you want.
+        // Use developer.mozilla.org NOT w3Schools!
     </script>
 
 </body>
