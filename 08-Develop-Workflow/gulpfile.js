@@ -2,12 +2,16 @@ var gulp = require("gulp");
 var sourcemaps = require("gulp-sourcemaps");
 // var babel = require("gulp-babel");
 var concat = require("gulp-concat");
-var minify = require("gulp-babel-minify");
+const babili = require("gulp-babili");
 
 gulp.task("default", function () {
   return gulp.src("src/**/*.js")
     .pipe(sourcemaps.init())
-    .pipe(minify())
+    .pipe(babili({
+      mangle: {
+        keepClassNames: true
+      }
+    }))
    // .pipe(minify())
     .pipe(concat("bundle.js"))
     .pipe(sourcemaps.write("."))
