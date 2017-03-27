@@ -16,7 +16,13 @@
            var name="Payne"
        }
        changeName()
-       console.log(name);
+       console.log(1,name) // Outpus 1, Matt
+       if (true) {
+           // Wow!  This is going to change the global varialble!!!
+           // because if is not a function!
+           var name = "Sam"
+       }
+       console.log(2,name) // Outputs 2, Sam
     </script>
 </body>
 </html>
