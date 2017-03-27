@@ -92,9 +92,12 @@
     form.addEventListener('submit',(event) => {
         event.preventDefault()
         console.log('submit')
-        todoList.innerHTML += `<li>${todo.value}</li>`
+        createTodo(todo.value)
     })
         
+    var createTodo = (todoText) => {
+        todoList.innerHTML += `<li>${todoText}</li>`;
+    }
 
     </script>
 </body>
