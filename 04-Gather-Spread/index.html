@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gather (Rest) & Spread</title>
+</head>
+<body>
+    <h2>Rest/Spread and Destructuring</h2>
+    <p>check that console...</p>
+    <script>
+        //rest operator
+        function manyArgs(one, two, ...others){
+            console.log(others[0])
+
+        }
+        manyArgs("a", "b", "c", "d", "e")
+
+        /**********************/
+        //Spread (spreads out the values)
+        var group1 = ["apple", "orange", "banana"]
+        var group2 = ["grape", "cherry", "pineapple"]
+        var allFruit = [...group1, ...group2]
+        console.log(allFruit)
+
+
+        /***************************/
+        //Destruturing: Stuff happing on the left site of the =
+        var list = [1, 2, 3, 4, 5]
+        var first = list[0]
+        var second = list[1]
+        var third = list[2]
+        [first, second] = list //DESTRUCTURED!
+        
+        console.log(first, second)
+
+        list = [1,2]
+        [first, second, third=10] = list //Default parameters!
+        console.log(first, second, third)
+
+        //Swaping values
+        /*[first, second] = [second, first]
+        console.log(first, second)*/
+
+        //Destructuring with objects
+        var data = {name:"Dustin", state:"Minnesota", conference:"Infotec", years:"6"}
+        var {name, state} = data
+        //var name = data.name
+        //var state = data.state
+        console.log(state)
+
+        var name = "John"
+        var state = "Nebraska"
+        var conference = "Infotec"
+        /*var data2 = {}
+            data2.name = name
+            data2.state = state
+            data2.conferece = conference*/
+        var data2 = {name, state, conference}
+        console.log(data2)
+
+
+
+    </script>
+</body>
+</html>

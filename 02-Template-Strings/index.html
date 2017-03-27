@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-Template Strings (or Literals)</title>
+    <style>
+        fieldset{border: 0;}
+        input[type=submit]{
+            background: #ccc;
+            padding: 1em 3em;
+            border: 0;
+            border-radius: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Template Strings (or Literals)</h2>
+    <form action="">
+        <fieldset>
+            <label for="linkName">Link Name:</label>
+            <input type="text" name="linkName" id="linkName">
+        </fieldset>
+        <fieldset>
+            <label for="linkURL">Link Name: http://</label>
+            <input type="text" name="linkURL" id="linkURL">
+        </fieldset>
+        <input type="submit">
+    </form>
+    
+    <ul class="links"></ul>
+
+    <script>
+        //Get reference to form and unordered list
+        const form = document.querySelector('form')
+        const list = document.querySelector('.links')
+
+        form.addEventListener("submit", function(event){
+            //When the submit button is pressed or "enter" is hit
+            event.preventDefault();
+            let name = document.querySelector("#linkName").value
+            let url = document.querySelector("#linkURL").value
+
+            //list.innerHTML += "<li><a href='" + url + "'>" + name + "</a></li>"
+            list.innerHTML += `<li><a href="${getHTTP(url)}">${name}</a></li>`
+        })
+
+        function getHTTP(url){
+            return `http://www.${url}`
+        }
+
+    </script>
+
+</body>
+</html>

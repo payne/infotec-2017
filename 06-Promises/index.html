@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Search for Movies!</h2>
+    <form action="">
+        <fieldset>
+            <label for="name">Movie Name:</label>
+            <input type="text" name="name" id="name" value="Top Gun">
+        </fieldset>
+        <input type="submit" value="Search">
+    </form>
+    <p class="results"></p>
+
+    <script>
+        'use strict'
+        const form = document.querySelector('form')
+        const searchField = document.querySelector('input[type=text')
+        const output = document.querySelector('.results')
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            var searchTerm = searchField.value;
+            search(searchTerm)
+                .then((data) => display(data))
+                .then(() => clearSearch())
+            
+        })
+
+        /*function search(term){
+            return new Promise( (resolve, reject) => {
+                var request = new XMLHttpRequest();
+                request.open('GET', `http://www.omdbapi.com/?t=${term}`, true);
+
+                request.onload = function() {
+                    var result = JSON.parse(request.responseText)
+                    resolve(result)
+                };
+
+                request.onerror = function() {
+                    reject()
+                };
+
+                request.send();
+            })
+        }*/
+
+        function search(term){
+            return fetch(`http://www.omdbapi.com/?t=${term}`)
+                .then(result => result.json())
+                .catch(err => console.log(err))
+
+        }
+
+        function display(movie){
+            console.log(movie)
+            return new Promise((resolve, reject) => {
+                var {Title, Year, Rated, Runtime, Poster} = movie
+                output.innerHTML = 
+                    `<h3>${Title}</h3>
+                    <p>Made in ${Year}, rated ${Rated} and is ${Runtime} long.</p>
+                    <img src="${Poster}" />`
+                setTimeout(() =>{
+                    resolve()
+                }, 4000)
+                
+            })
+        }
+
+        function clearSearch(){
+            searchField.value = ""
+        }
+
+    </script>
+</body>
+</html>

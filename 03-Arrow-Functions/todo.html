@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta type="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        footer, section, header, aside,figure {
+            display: block;
+        }
+        
+        body {
+            padding: 2em;
+            font-size: 15px;
+            font-family: helvetica, arial, sans-serif;
+        }
+        
+        form {
+            width: 280px;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        #newitem {
+            width: 160px;
+            font-size: 18px;
+        }
+        
+        #todolist {
+            width: 280px;
+            margin: 10px solid;
+            margin: 10px 20px;
+        }
+        
+        #todolist li {
+            border-radius: 2px;
+            list-style: none;
+            background: #eee;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        
+        #todolist li:nth-child(2n) {
+            background: #ccc;
+        }
+        
+        #todolist li:hover:after {
+            content: '✔';
+            color: #060;
+            position: absolute;
+            right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Basic Todo List</h1>
+    </header>
+    <section>
+        <form action="#" method="post">
+            <div>
+                <label for="newitem">Add item</label>
+                <input type="text" name="newitem" id="newitem" placeholder="new item" />
+                <input type="submit" value="Add" />
+            </div>
+        </form>
+        <ul id="todolist"></ul>
+    </section>
+    <footer>
+    </footer>
+    <script>
+
+        var todo = document.querySelector('#todolist')
+        var form = document.querySelector('form')
+        var field = document.querySelector('#newitem')
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            var text = field.value;
+            if (text !== '') {
+                createTodo(text)
+                field.value = '';
+                field.focus();
+            }
+        });
+
+        todo.addEventListener('click', function (event) {
+            event.preventDefault();
+            var t = event.target;
+            if (t.tagName === 'LI') {
+                removeTodo(t);
+            };
+        });
+
+        function createTodo(text){
+            todo.innerHTML += '<li>' + text + '</li>';
+        }
+
+        function removeTodo(li){
+            todo.removeChild(li)
+        }
+
+
+    </script>
+</body>
+
+</html>
