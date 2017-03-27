@@ -46,11 +46,13 @@
         var state = "Nebraska"
         var conference = "Infotec"
         // old way
-        var person = {
+        var personOld = {
             name: name,
             state: state,
             conference: conference
         }      
+        // new way with Destructuring
+        var person = { name, state, conference } // could be on several lines
         console.log(person)  
 
 
