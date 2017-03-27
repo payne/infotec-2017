@@ -33,12 +33,14 @@
         })
 
         function search(term){
+            // no jQuery, doing it native old fashioned way.
                 var request = new XMLHttpRequest();
                 request.open('GET', `http://www.omdbapi.com/?t=${term}`, true);
 
                 request.onload = function() {
                     var result = JSON.parse(request.responseText)
                     console.log(result);
+                    display(result)
                 };
 
                 request.onerror = function() {
@@ -48,6 +50,18 @@
                 request.send();
         }
 
+        var display = movie => {
+            // display in the output variable
+            var {Title,Year,Rated,Runtime,Poster} = movie // destructure
+            console.log(Title,Year,Rated,Runtime,Poster)
+            output.innerHTML = `
+            <h3>${Title}</h3>
+            <p>Made in ${Year}, rated ${Rated} and has runtime ${Runtime}.</p>
+            <img src="${Poster}" alt="${Title} poster"/>
+            `
+        }
+
     </script>
+    
 </body>
 </html>
