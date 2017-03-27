@@ -30,6 +30,7 @@
             var searchTerm = searchField.value;
             search(searchTerm)
                 .then(data => display(data))
+                .then(result => console.log(result))
         })
 
         function search(term){
@@ -48,6 +49,7 @@
             <p>Made in ${Year}, rated ${Rated} and has runtime ${Runtime}.</p>
             <img src="${Poster}" alt="${Title} poster"/>
             `
+            return movie;
         }
     </script>
     
