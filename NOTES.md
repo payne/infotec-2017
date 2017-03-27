@@ -45,3 +45,10 @@ Let is locally scoped variable.
 Script tag is supposed to go in the body, not the head.   It's good to load your main JavaScript after the rest of the webpage.
 
 Command Option I to open developer tools on Mac.
+
+## Closing
+
+https://slides.com/mattpayneorg has a copy of the slides:
+http://slides.com/dtauer/infotec2017-javascript#/
+
+Logged in with google.  
