@@ -60,6 +60,13 @@
             <img src="${Poster}" alt="${Title} poster"/>
             `
         }
+        // The problem with the old way above is that it is not a clean 
+        // way to work with remote data or other async situations.
+        // The search function should not know what it has to do after 
+        // it is done searching.   Think single responsiblity principle (SRP).
+        // Promises have something happen.  Alert when done.  Just chain on.
+        // Common analogy -- take a ticket at the deli.  
+        
 
     </script>
     
