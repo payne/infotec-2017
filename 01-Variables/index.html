@@ -20,9 +20,10 @@
        if (true) {
            // Wow!  This is going to change the global varialble!!!
            // because if is not a function!
-           var name = "Sam"
+           //var name = "Sam"
+           let name = "Sam" // this is blocked scoped!
        }
-       console.log(2,name) // Outputs 2, Sam
+       console.log(2,name) // because of let Outputs 2, Matt
     </script>
 </body>
 </html>
