@@ -7,6 +7,7 @@ const babili = require("gulp-babili");
 gulp.task("default", function () {
   return gulp.src("src/**/*.js")
     .pipe(sourcemaps.init())
+    // this works!  Click on the console.log in the output (chrome dev tools)
     .pipe(babili({
       mangle: {
         keepClassNames: true
