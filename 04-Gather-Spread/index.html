@@ -14,6 +14,8 @@
         function manyArgs(first,...other){
             console.log(1,first)
             console.log(2,other)
+            // https://developer.mozilla.org/en-US/docs/Web/API/Console/table
+            console.table([other])
         }
         manyArgs("a", "b", "c", "d", "e")
 
