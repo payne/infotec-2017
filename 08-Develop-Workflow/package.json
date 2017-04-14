@@ -4,6 +4,7 @@
   "description": "Example workflow using Webpack with ES6",
   "main": "index.js",
   "scripts": {
+    "build": "gulp default",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
